@@ -1,7 +1,16 @@
 /**
  * Created by SunXP on 2018-05-05.
  */
+
+//Natural disaster identifiers
+ const FLOOD = "flood";
+ const RAIN = "rain";
+ const DROUGHT = "drought";
+ const HEATWAVE = "heatwave";
+ const STORM = "storm";
+
 //GET LOCATION OF USER
+
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -12,8 +21,8 @@ function getLocation() {
 
 //SHOW POSITION OF USER
 function showPosition(position) {
-    alert("Latitude: " + position.coords.latitude +
-        "Longitude: " + position.coords.longitude);
+    //alert("Latitude: " + position.coords.latitude +
+      //  "Longitude: " + position.coords.longitude);
 }
 
 //ERROR HANDLING FOR LOCATION
@@ -33,7 +42,16 @@ function showError(error) {
 
 //RENDER MAP
 
+$(document).ready(function(){
+    $('#vulnerability-selection input[type=radio]').click(function(){
+        retrieveRelevantData(this.id);
+    });
+});
 
+function retrieveRelevantData(naturalDisaster) {
+  alert(naturalDisaster);
+
+}
 
 //USER CHECKS RISK OPTIONS AND CALLS BACKEND
 function doAction(choice) {

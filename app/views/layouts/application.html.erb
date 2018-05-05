@@ -5,13 +5,15 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"%>
     <%= javascript_include_tag src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7hP_PYDdxKOQsYLeOXVvGDWttAY0rYqo&callback=initMap", :defer => "defer"%>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 100%;
+        height: 90%;
+        overflow: hidden;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -19,10 +21,51 @@
         margin: 0;
         padding: 0;
       }
+
+      label {
+        padding-right: 1.5em;
+      }
+
+      #radio-container {
+        margin-top: 1em;
+        padding-bottom: 0.5em;
+      }
+
     </style>
   </head>
 
   <body>
+    <div class="page-header">
+      <h1 class="display-4">GeoRisk Vulnerability Visualization</h1>
+      <div id="vulnerability-selection">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="flood" name="vulnerability" class="custom-control-input">
+          <label class="custom-control-label" for="flood">Crues</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="rain" name="vulnerability" class="custom-control-input">
+          <label class="custom-control-label" for="rain">Pluies abondantes</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="drought" name="vulnerability" class="custom-control-input">
+          <label class="custom-control-label" for="drought">Secheresse</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="heatwave" name="vulnerability" class="custom-control-input">
+          <label class="custom-control-label" for="heatwave">Vague de chaleur</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="storm" name="vulnerability" class="custom-control-input">
+          <label class="custom-control-label" for="storm">Tempête Destructrice</label>
+        </div>
+      </div>
+    </div>
+
     <%= yield %>
+    <script type="text/javascript">
+      $(document).load(function(){
+        initMap();
+      });
+    </script>
   </body>
 </html>
