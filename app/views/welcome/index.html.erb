@@ -5,8 +5,16 @@
     <title>Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
+    <script type="text/javascript" src="script.js"></script>
   </head>
   <body>
+    <form action="">
+        <input type="checkbox" name="risk" id="1" value="crues" onchange="doAction(this)">Crues<br>
+        <input type="checkbox" name="risk" id="2" value="pluies abondantes" onchange="doAction(this)">Pluies abondantes<br>
+        <input type="checkbox" name="risk" id="3" value="secheresses" onchange="doAction(this)">Secheresse<br>
+        <input type="checkbox" name="risk" id="4" value="chaleur" onchange="doAction(this)">Vague de chaleur<br>
+    </form>
+    
     <div id="map"></div>
     <script>
       var map;
