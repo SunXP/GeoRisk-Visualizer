@@ -1,11 +1,10 @@
 var map;
 
-function initMap() {
-  getLocation();
+function initMap(userLat, userLong) {
   console.log("initializing map sequence");
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 45.50884, lng: -73.58781},
-    zoom: 10,
+    center: {lat: userLat, lng: userLong},
+    zoom: 15,
     gestureHandling: 'greedy'
   });
 }

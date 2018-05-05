@@ -11,18 +11,18 @@
 
 //GET LOCATION OF USER
 
-function getLocation() {
+function init() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
+        navigator.geolocation.getCurrentPosition(initializePosition, showError);
     } else {
-        alert("Geolocation is not supported by this browser.");
+        window.alert("Geolocation is not supported by this browser.");
     }
 }
 
 //SHOW POSITION OF USER
-function showPosition(position) {
-    //alert("Latitude: " + position.coords.latitude +
-      //  "Longitude: " + position.coords.longitude);
+function initializePosition(position) {
+    initMap(position.coords.latitude, position.coords.longitude);
+
 }
 
 //ERROR HANDLING FOR LOCATION
@@ -51,15 +51,4 @@ $(document).ready(function(){
 function retrieveRelevantData(naturalDisaster) {
   alert(naturalDisaster);
 
-}
-
-//USER CHECKS RISK OPTIONS AND CALLS BACKEND
-function doAction(choice) {
-    var x = choice.value;
-    if (choice.checked) {
-        alert(x + " enabled");
-    }
-    else {
-        alert(x + " disabled");
-    }
 }

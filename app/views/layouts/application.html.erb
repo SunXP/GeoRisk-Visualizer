@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"%>
-    <%= javascript_include_tag src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7hP_PYDdxKOQsYLeOXVvGDWttAY0rYqo&callback=initMap", :defer => "defer"%>
+    <%= javascript_include_tag src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7hP_PYDdxKOQsYLeOXVvGDWttAY0rYqo&callback=init", :defer => "defer"%>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
       /* Always set the map height explicitly to define the size of the div
@@ -60,12 +60,12 @@
         </div>
       </div>
     </div>
-
     <%= yield %>
-    <script type="text/javascript">
+    <!--script type="text/javascript">
       $(document).load(function(){
-        initMap();
+        init();
       });
-    </script>
+    </script-->
+
   </body>
 </html>
