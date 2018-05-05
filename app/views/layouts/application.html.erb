@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7hP_PYDdxKOQsYLeOXVvGDWttAY0rYqo&callback=initMap", :defer => "defer"%>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
       /* Always set the map height explicitly to define the size of the div
