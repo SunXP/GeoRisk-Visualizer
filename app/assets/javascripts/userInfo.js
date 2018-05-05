@@ -1,9 +1,6 @@
 /**
  * Created by SunXP on 2018-05-05.
  */
-
-getLocation();
-
 //GET LOCATION OF USER
 function getLocation() {
     if (navigator.geolocation) {
