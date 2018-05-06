@@ -89,4 +89,14 @@ function initMap(naturalDisaster) {
       strokeWeight: 0.5
     };
   });
+
+  map.data.addListener('mouseover', function(event) {//adding outline to mouse hover
+    map.data.revertStyle();
+    map.data.overrideStyle(event.feature, {strokeWeight: 8});
+    document.getElementById('info-box').textContent = 
+    	[
+          'Arrondissement: ' + event.feature.getProperty('NOM_ARR'),
+          ' Risque de ' + naturalDisaster +': '+ event.feature.getProperty('VULN_CAT')
+        ];
+  });
 }
