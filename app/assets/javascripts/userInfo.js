@@ -50,7 +50,7 @@ $(document).ready(function(){
 
 function retrieveRelevantData(naturalDisaster) {
   alert(naturalDisaster);
-
+  initMap(naturalDisaster);
 }
 
 //USER CHECKS RISK OPTIONS AND CALLS BACKEND
